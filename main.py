@@ -129,31 +129,48 @@ def ordinateur_hand():
     print(len(comp_hand))
 
 
+
+
 def MBRFI():
-    build_deck()
-    random.shuffle(fulldeck)
-    print(fulldeck)
-    premiere_player_hand()
-    ordinateur_hand()
-    while len(fulldeck) != 0 and len(p_gsfhd) != 0 and len(c_gsfhd) != 0:
-        print(player_hand)
-        same_suit(p_gsfhd, p_count)
-        show_hand_deck(p_gsfhd, player_hand)
-        show_hand_deck(c_gsfhd, comp_hand)
-        same_suit(c_gsfhd, c_count)
-        show_hand_deck(c_gsfhd, comp_hand)
-        show_hand_deck(p_gsfhd, player_hand)
-        print("The length of computer deck is ", len(comp_hand))
-    else:
-        pest = len(p_count) / 2
-        pest = int(pest)
-        cest = len(c_count) / 2
-        cest = int(cest)
-        print("Player pair count is ", str(pest), " and computer pair count is ", str(cest))
-        if pest > cest:
-            print("Player wins!!!!! Yey!!! > - ")
+    play = 'y'
+    while play == 'y':
+        build_deck()
+        random.shuffle(fulldeck)
+        print(fulldeck)
+        premiere_player_hand()
+        ordinateur_hand()
+        while len(fulldeck) != 0 and len(p_gsfhd) != 0 and len(c_gsfhd) != 0:
+            print(player_hand)
+            same_suit(p_gsfhd, p_count)
+            show_hand_deck(p_gsfhd, player_hand)
+            show_hand_deck(c_gsfhd, comp_hand)
+            same_suit(c_gsfhd, c_count)
+            show_hand_deck(c_gsfhd, comp_hand)
+            show_hand_deck(p_gsfhd, player_hand)
+            print("The length of computer deck is ", len(comp_hand))
         else:
-            print("Computer wins. You lose!!! - - ")
+            pest = len(p_count) / 2
+            pest = int(pest)
+            cest = len(c_count) / 2
+            cest = int(cest)
+            print("Player pair count is ", str(pest), " and computer pair count is ", str(cest))
+            if pest > cest:
+                print("Player wins!!!!! Yey!!! > - ")
+            elif pest == cest:
+                print("It is a tie !")
+            else:
+                print("Computer wins. You lose!!! - - ")
+        play = input("Do you want to play again?['y'/'n']").lower()
+        if play == 'y':
+            comp_hand.clear()
+            player_hand.clear()
+        else:
+            break
+
+
+
+
+
 
 
 
