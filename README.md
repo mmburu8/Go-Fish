@@ -1,6 +1,6 @@
 # Go-Fish
 
-This application is a classic card game known as GoFish.
+This application is a classic card game known as Go-Fish.
 
 By Martin Mburu
 
